@@ -1,0 +1,274 @@
+html,body, main{
+    background-color: white;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Times New Roman', serif !important;
+}
+.container {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    height: 100vh;
+    padding: 20px
+}
+
+
+.right {
+    background-image: url('kanban.png');
+    background-size: contain;
+    object-fit: scale-down;
+    width: 100%;
+    height: 90%;
+}
+  
+.left {
+    background-color: white;
+}
+
+
+
+.box {
+    background-color: aliceblue;
+    color: darkblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+header {
+  background: aliceblue;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.heading {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+  position: relative;
+}
+
+nav a {
+  color: darkblue;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-family: 'Times New Roman', serif !important;
+}
+
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: darkblue;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+
+.table {
+  display: flex;
+  margin: 50px;
+}
+
+
+.column {
+  width: 50%;
+  border: 0.3px black;
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+div {
+  column-gap: 20px;
+}
+
+#header {
+    padding: 30px;
+    text-align: center;
+    background: aliceblue;
+    color: darkblue;
+    font-size: 25px;
+}
+
+
+#footer {
+    position: fixed;
+    width: 100%;
+    background-color: aliceblue;
+    color: darkblue;
+    text-align: center;
+    left: 0;
+    bottom:0;
+}
+
+
+ul {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+  
+li{
+    display: list-item;
+    text-align: left;
+    margin: 0 10px;
+}
+
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+  color: darkblue;
+  text-align: center;
+}
+
+form {
+    width:  100%;
+    margin: 0 auto;
+    text-align: left;
+}
+      
+form label {
+    display: inline-block;
+    margin: 10px 0;
+    width: 100px;
+}
+      
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="submit"]{
+    display: inline-block;
+    margin: 10px 0;
+    width: 300px;
+    max-width: 300px;
+    padding: 10px;
+    border: 5px solid aliceblue;
+    border-radius: 5px;
+}
+      
+form input[type="submit"] {
+    background-color: darkblue;
+    color: white;
+}
+
+
+.layout{
+  max-width: 600px;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 5px;
+  background-color:  aliceblue;
+  box-shadow: 2px 2px 5px darkblue;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.error {
+  color: red;
+  background-color: white;
+  display: inline-block;
+  margin: 10px 0;
+  width: 150px;
+  height: 25px;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.notification{
+  background-color: aliceblue;
+  color: black;
+  margin: 10px auto;
+  width: 250px;
+  height: 35px;
+  padding: 5px;
+  border: 2px solid darkblue;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: darkblue;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.button:hover {
+  background-color: darkblue;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.delete_button {
+  padding: 5px 10px;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+
+.add_button {
+  padding: 5px 10px;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+}
+
