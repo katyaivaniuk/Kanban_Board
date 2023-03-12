@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+		<title>{% block title %} {% endblock %}</title>
+	</head>
+	<body>
+		<header>
+			<div class="wrapper">
+				<h1 class="heading"></h1>
+				<nav>
+					<ul>
+						<li><a href="{{url_for('home')}}">Home</a></li>
+						<li><a href="{{url_for('login')}}">Your Kanban</a></li>
+						<li><a href="{{url_for('register')}}">Register</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<div id="footer"> Minerva University, 2023 </div>
+	</body>
+</html>
+
+

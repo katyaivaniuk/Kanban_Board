@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+
+{% block content %}
+
+<div class="layout">
+    <h1>Login</h1>
+    {% if notification  %}
+        <p class="notification ">{{ notification }}</p>
+    {% endif %}
+
+    {% if form %}
+        <form class="form" action="{{url_for('login')}}" method="POST">
+            <div class="section">
+                <label for="email">Email:</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <span class="error">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="section">
+                <label for="password">Password:</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        <span class="error">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {{ form.csrf_token }}
+            <button class="button" type="submit">Login</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
+

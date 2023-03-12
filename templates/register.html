@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="layout">
+    <h1> Register </h1>
+    {% if notification  %}
+      <p class="notification " style = "text-align: center">{{ notification }}</p>
+    {% endif %}
+
+    {% if form %}
+        <form class="form" action="{{url_for('register')}}" method="POST">
+            <div class="section">
+                <label for="first_name">First Name:</label>
+                {{ form.first_name }}
+                {% if form.first_name.errors %}
+                    {% for error in form.first_name.errors %}
+                    <span class="error">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+            
+            <div class="section">
+                <label for="last_name">Last Name:</label>
+                {{ form.last_name }}
+                {% if form.last_name.errors %}
+                    {% for error in form.last_name.errors %}
+                    <span class="error">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+        
+            <div class="section">
+                <label for="email">Email:</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                    <span class="error">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="section">
+                <label for="password">Password:</label>
+
+                {{ form.password }}
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                    <span class="error">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+        {{ form.csrf_token }}
+        <button class="button" type="submit"> Register </button>
+      </form>
+    {% endif %}
+</div>
+{% endblock %}

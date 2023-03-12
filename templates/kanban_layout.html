@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+
+{% block title %}
+Kanban Board
+{% endblock %}
+
+
+{% block content %}
+<div class="table">
+
+    <div class="column">
+
+        <h2> To Do </h2>
+        {% for item in kanban["to do"] %}
+            <li>{{ item }}</li><br>
+            {% endfor %}
+
+            <form action="{{url_for('add_task')}}" method="post">
+                <label for="added_task">Add task:</label>
+                <input type="text" name="added_task">
+                <input type="hidden" name="status" value="to do">       
+                <input type="submit" value="Add">
+                <!-- <button type="submit" class="add_button">
+                    <img src="/static/add.png" alt="Add a task" width="30" height="30" style="display:inline-block;"> 
+                </button> -->
+            </form>
+    </div>
+
+
+
+
+
+    <div class="column">
+        <h2> In progress </h2>
+        {% for item in kanban["in progress"] %}
+            <li>{{ item }}</li><br>
+        {% endfor %}
+        
+        
+        <form action="{{url_for('move_task')}}" method="post">
+            <label for="moving_task">Move Task: </label>
+                <select name="moving_task">
+                    
+                    {% for task in kanban["to do"] %}
+                        <option value="{{ task }}">{{ task }}</option>
+                    {% endfor %}
+                    
+                    {% for task in kanban["in progress"] %}
+                        <option value="{{ task }}">{{ task }}</option>
+                    {% endfor %}
+
+                    {% for task in kanban["completed"] %}
+                        <option value="{{ task }}">{{ task }}</option>
+                    {% endfor %}
+
+                </select><br>
+
+                <label for="status">Move to:</label>
+                <select name="status">
+                    <option value="to do">To do</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <input type="submit" value="Move task">
+                </select>
+        </form>
+    </div>
+    
+    
+    <div class="column">
+        <h2>Completed</h2>
+        {% for item in kanban["completed"] %}
+            <li>{{ item }}</li><br>
+        {% endfor %}
+        
+        
+        <form action="{{url_for('delete_task')}}" method="post" >
+            <label for="deleted_task">Delete a task:</label>
+            <input type="text" name="deleted_task">
+            <input type="hidden" name="status" value="completed">
+            <button type="submit" class="delete_button" value="Delete">
+                <img src="/static/delete.png" alt = "Delete a task" width="25" height="25" style="display:inline-block;"> 
+            </button>
+        </form>
+    </div>
+</div>
+  
+
+{% endblock %}
+
+
