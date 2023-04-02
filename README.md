@@ -1,7 +1,5 @@
 # Kanban_Board
 
-Link to the Loom recording: https://www.loom.com/share/8ef8cd69595c4ac58fc0ddf68fa7fd70
-
 ## Templates Folder:
 1. base.html: contains the standard structure of the website, such as the header, footer, and navigation bar, since it is the information that should be displayed on each page. Hence, it allows other templates to inherit from it, override it and reduce code duplication.
 2. home.html: contains the structure of the home page of the website, which is divided into two parts: the right part (65% of the screen) of it contains the image of how the Kanban Board looks like so that the user can get to know the idea behind better; the left part (35% of the screen) contains the description of the Kanban board and its benefits. 
