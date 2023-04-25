@@ -1,5 +1,25 @@
 # Kanban_Board
 
+### Steps to run the program:
+
+#### Activate the virtual environment by running the following command:
+```cmd
+python3 -m venv venv
+source venv/bin/activate
+```
+
+
+#### Install any required dependencies by running the following command:
+```cmd
+pip3 install -r requirements.txt
+```
+
+#### Run the Flask application
+```cmd 
+EXPORT FLASK_APP=app
+flask run
+```
+
 ## Templates Folder:
 1. base.html: contains the standard structure of the website, such as the header, footer, and navigation bar, since it is the information that should be displayed on each page. Hence, it allows other templates to inherit from it, override it and reduce code duplication.
 2. home.html: contains the structure of the home page of the website, which is divided into two parts: the right part (65% of the screen) of it contains the image of how the Kanban Board looks like so that the user can get to know the idea behind better; the left part (35% of the screen) contains the description of the Kanban board and its benefits. 
